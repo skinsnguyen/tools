@@ -1,3 +1,4 @@
+cp /etc/csf/csf.conf /etc/csf/csf.conf.bak
 sed -i 's/^TESTING = .*/TESTING = "0"/g' /etc/csf/csf.conf
 sed -i 's/^RESTRICT_SYSLOG = .*/RESTRICT_SYSLOG = "3"/g' /etc/csf/csf.conf
 sed -i 's/^TESTING_INTERVAL = .*/TESTING_INTERVAL = "5"/g' /etc/csf/csf.conf
