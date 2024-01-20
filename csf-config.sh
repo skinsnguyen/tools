@@ -1,3 +1,4 @@
+https://kb.pavietnam.vn/huong-dan-su-dung-csf-firewall-tren-giao-dien.html
 cp /etc/csf/csf.conf /etc/csf/csf.conf.bak
 sed -i 's/^TESTING = .*/TESTING = "0"/g' /etc/csf/csf.conf
 sed -i 's/^RESTRICT_SYSLOG = .*/RESTRICT_SYSLOG = "3"/g' /etc/csf/csf.conf
@@ -12,8 +13,8 @@ sed -i 's/^PORTFLOOD = .*/PORTFLOOD = "80;tcp;50;10;443;tcp;50;10"g' /etc/csf/cs
 sed -i 's/^SYNFLOOD = .*/SYNFLOOD = "1"/g' /etc/csf/csf.conf
 sed -i 's/^SMTP_BLOCK = .*/SMTP_BLOCK = "0"/g' /etc/csf/csf.conf
 sed -i 's/^LF_SSHD = .*/LF_SSHD = "10"/g' /etc/csf/csf.conf
-sed -i 's/^CT_PORTS = .*/CT_PORTS = "80,53,22,21,443"g' /etc/csf/csf.conf
-sed -i 's/^CT_STATES = .*/CT_STATES = "SYN_RECV"g' /etc/csf/csf.conf
+sed -i 's/^CT_PORTS = .*/CT_PORTS = "80,53,22,21,443"/g' /etc/csf/csf.conf
+sed -i 's/^CT_STATES = .*/CT_STATES = "SYN_RECV"/g' /etc/csf/csf.conf
 
 
 
