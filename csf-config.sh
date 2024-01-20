@@ -5,11 +5,11 @@ sed -i 's/^RESTRICT_SYSLOG = .*/RESTRICT_SYSLOG = "3"/g' /etc/csf/csf.conf
 sed -i 's/^TESTING_INTERVAL = .*/TESTING_INTERVAL = "5"/g' /etc/csf/csf.conf
 sed -i 's/^LF_CSF = .*/LF_CSF =  = "1"/g' /etc/csf/csf.conf
 sed -i 's/^UDPFLOOD = .*/UDPFLOOD = "1"/g' /etc/csf/csf.conf
-sed -i 's/^UDPFLOOD_LIMIT = .*/UDPFLOOD_LIMIT = "25/s"/g' /etc/csf/csf.conf
+sed -i 's/^UDPFLOOD_LIMIT = .*/UDPFLOOD_LIMIT = "25\/s"/g' /etc/csf/csf.conf
 sed -i 's/^UDPFLOOD_BURST = .*/UDPFLOOD_BURST = "50"/g' /etc/csf/csf.conf
 sed -i 's/^CT_LIMIT = .*/CT_LIMIT = "100"/g' /etc/csf/csf.conf
 sed -i 's/^CONNLIMIT = .*/CONNLIMIT = "80;20,443;20"/g' /etc/csf/csf.conf
-sed -i 's/^PORTFLOOD = .*/PORTFLOOD = "80;tcp;50;10;443;tcp;50;10"g' /etc/csf/csf.conf
+sed -i 's/^PORTFLOOD = .*/PORTFLOOD = "80;tcp;50;10;443;tcp;50;10"/g' /etc/csf/csf.conf
 sed -i 's/^SYNFLOOD = .*/SYNFLOOD = "1"/g' /etc/csf/csf.conf
 sed -i 's/^SMTP_BLOCK = .*/SMTP_BLOCK = "0"/g' /etc/csf/csf.conf
 sed -i 's/^LF_SSHD = .*/LF_SSHD = "10"/g' /etc/csf/csf.conf
