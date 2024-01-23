@@ -19,7 +19,7 @@ sed -i 's/^CT_STATES = .*/CT_STATES = "SYN_RECV"/g' /etc/csf/csf.conf
 
 
 
-
+cp /etc/csf/csf.blocklists /etc/csf/csf.blocklists.-goc
 #############################################################################################
 sed -i '/^#SPAMDROP/s/^#//' /etc/csf/csf.blocklists
 sed -i '/^#SPAMEDROP/s/^#//' /etc/csf/csf.blocklists
