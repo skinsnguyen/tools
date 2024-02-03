@@ -119,7 +119,7 @@ install_plugin() {
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " choice_plugin
     case $choice_plugin in
-        0) install_and_activate_plugin "$rocket";;
+        0) main_menu;;
         1) install_and_activate_plugin "$WPMUDevDashboard";;
         2) install_and_activate_plugin "$SEORankMathPro";;
         3) install_and_activate_plugin "$astrapremiumsites";;
