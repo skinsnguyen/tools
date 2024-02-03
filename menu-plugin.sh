@@ -113,9 +113,8 @@ install_themes(){
     echo "| 2. Cài đặt Dvide                           |"
     echo "| 0. Thoát                                    |"
     echo "+---------------------------------------------+"
-    read -p "Nhập vào lựa chọn: " main_choice
-    read -p "Nhập vào lựa chọn: " control_panel_choice
-    case $control_panel_choice in
+    read -p "Nhập vào lựa chọn: " choice_theme
+    case $choice_theme in
         0) install_and_activate_theme ;;
         1) install_and_activate_theme ;;
         2) iinstall_and_activate_theme ;;
