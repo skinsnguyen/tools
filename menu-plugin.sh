@@ -91,47 +91,41 @@ install_plugin() {
     read -p "Nhập vào lựa chọn: " choice_plugin
     case $choice_plugin in
         0) install_and_activate_plugin ;;
-        1) install_hostvn_script ;;
-        2) install_hocvps ;;
-        3) install_larvps ;;
-        4) install_centmind_mod ;;
-        5) install_tinovps_script ;;
-        6) install_webinoly_script ;;
-        7) install_easyengine_script ;;
-        8) install_wordops_script ;;
-        9) install_dlemp_script ;;
-        10) install_lempstack ;;
+        1) install_and_activate_plugin ;;
+        2) install_and_activate_plugin ;;
+        3) install_and_activate_plugin ;;
+        4) install_and_activate_plugin;;
+        5) install_and_activate_plugin ;;
+        6) install_and_activate_plugin ;;
+        7) install_and_activate_plugin ;;
+        8) install_and_activate_plugin ;;
+        9) install_and_activate_plugin ;;
+        10) install_and_activate_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
 
 install_themes(){
     echo "+---------------------------------------------+"
-    echo "| Chọn Control Panel mà bạn muốn cài:         |"
+    echo "| Chọn loại cài đặt mà bạn muốn thực hiện:    |"
     echo "+---------------------------------------------+"
-    echo "| 1. Cài đặt HestiaCP                         |"
-    echo "| 2. Cài đặt CloudPanel                       |"
-    echo "| 3. Cài đặt AApanel                          |"
-    echo "| 4. Cài đặt FastPanel                        |"
-    echo "| 5. Cài đặt CyberPanel                       |"
-    echo "| 6. Cài đặt CWP (Control-WebPanel)           |"
-    echo "| 7. Cài đặt Webmin                           |"
-    echo "| 8. Cài đặt DirectAdmin                      |"
-    echo "| 9. Cài đặt VestaCP                          |"
-    echo "| 0. Quay lại Menu Chính                      |"
+    echo "| 1. cai đặt theme aztra                           |"
+    echo "| 2. Cài đặt Dvide                           |"
+    echo "| 0. Thoát                                    |"
     echo "+---------------------------------------------+"
+    read -p "Nhập vào lựa chọn: " main_choice
     read -p "Nhập vào lựa chọn: " control_panel_choice
     case $control_panel_choice in
-        0) back_to_main_menu ;;
-        1) install_hestiacp ;;
-        2) install_cloudpanel ;;
-        3) install_aapanel ;;
-        4) install_fastpanel ;;
-        5) install_cyberpanel ;;
-        6) install_cwp ;;
-        7) install_webmin ;;
-        8) install_directadmin ;;
-        9) install_vestacp ;;
+        0) install_and_activate_theme ;;
+        1) install_and_activate_theme ;;
+        2) iinstall_and_activate_theme ;;
+        3) install_and_activate_theme ;;
+        4) install_and_activate_theme ;;
+        5) install_and_activate_theme ;;
+        6) install_and_activate_theme ;;
+        7) install_and_activate_theme ;;
+        8) install_and_activate_theme ;;
+        9) install_and_activate_theme ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
