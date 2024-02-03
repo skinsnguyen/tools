@@ -1,6 +1,6 @@
 #!/bin/bash
-## Nam-Nguyen
-## 10/12/2023
+# Nam-Nguyen
+# 03-02-2024
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
