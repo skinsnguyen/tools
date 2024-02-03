@@ -87,10 +87,10 @@ astrachild="https://tool.kienthuclinux.info/theme/astra-child.zip"
 astra="https://tool.kienthuclinux.info/theme/astra.4.0.2.zip"
 astraaddonplugin="https://tool.kienthuclinux.info/theme/astra-addon-plugin-4.0.1.zip"
 astrapremiumsites="https://tool.kienthuclinux.info/theme/astra-premium-sites-3.1.24.zip"
-wp-schema-pro="https://tool.kienthuclinux.info/theme/wp-schema-pro-2.7.4.zip"
-ultimate-elementor="https://tool.kienthuclinux.info/theme/ultimate-elementor-1.36.14.zip"
-convertpro-addon="https://tool.kienthuclinux.info/theme/convertpro-addon-1.5.5.zip"
-bb-ultimate-addon="https://tool.kienthuclinux.info/theme/bb-ultimate-addon-1.35.3.zip"
+wpschemapro="https://tool.kienthuclinux.info/theme/wp-schema-pro-2.7.4.zip"
+ultimateelementor="https://tool.kienthuclinux.info/theme/ultimate-elementor-1.36.14.zip"
+convertproaddon="https://tool.kienthuclinux.info/theme/convertpro-addon-1.5.5.zip"
+bbultimateaddon="https://tool.kienthuclinux.info/theme/bb-ultimate-addon-1.35.3.zip"
 
 
 
@@ -110,9 +110,12 @@ install_plugin() {
     echo "| 6.        Seedprod                          |"
     echo "| 7.        Wpstaging                         |"
     echo "| 8.   all-in-one-wp-migration                |"
-    echo "| 9.                            |"
-    echo "| 10.                      |"
-    echo "| 0. Quay lại Menu Chính                      |"
+    echo "| 9.       Show tất cả plugin                 |"
+    echo "| 10.          Xoá plugin                     |"
+    echo "| 11.          Tắt plugin                     |"
+    echo "| 12.       update plugin                     |"
+    echo "| 13.     update plugin                       |"
+    echo "| 0.     Quay lại Menu Chính                      |"
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " choice_plugin
     case $choice_plugin in
@@ -125,8 +128,11 @@ install_plugin() {
         6) install_and_activate_plugin "$wpstaging";;
         7) install_and_activate_plugin "$migrationunlimitedextension";;
         8) install_and_activate_plugin "$allinonewpmigration";;
-        9) install_and_activate_plugin ;;
-        10) install_and_activate_plugin ;;
+        9) display_installed_plugins;;
+        10) delete_plugin ;;
+        11) disable_all_plugin ;;
+        12) update_plugin ;;
+        13) update_all_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
@@ -140,26 +146,28 @@ install_theme_astra() {
     echo "| 3.      Astra Addon Plugin                  |"
     echo "| 4.       Astra-premium-sites                |"
     echo "| 5.      wp-schema-pro                       |"
-    echo "| 6.        wp-schema-pro                          |"
-    echo "| 7.        Wpstaging                         |"
-    echo "| 8.   all-in-one-wp-migration                |"
+    echo "| 6.        wp-schema-pro                     |"
+    echo "| 7.     convertpro-addon                     |"
+    echo "| 8.         bb-ultimate-addon         |"
     echo "| 9.                            |"
     echo "| 10.                      |"
     echo "| 0. Quay lại Menu Chính                      |"
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " choice_thems_astra
     case $choice_thems_astra in
-        0) install_and_activate_theme "$astrachild";;
-        1) install_and_activate_theme "$astra";;
-        2) install_and_activate_plugin "$astraaddonplugin";;
-        3) install_and_activate_plugin "$astrapremiumsites";;
-        4) install_and_activate_plugin "$wpschemapro";;
-        5) install_and_activate_plugin "$seedprod";;
-        6) install_and_activate_plugin "$wpstaging";;
-        7) install_and_activate_plugin "$migrationunlimitedextension";;
-        8) install_and_activate_plugin "$allinonewpmigration";;
-        9) install_and_activate_plugin ;;
+        0) main_menu ;;
+        1) install_and_activate_theme "$astrachild";;
+        2) install_and_activate_theme "$astra";;
+        3) install_and_activate_plugin "$astraaddonplugin";;
+        4) install_and_activate_plugin "$astrapremiumsites";;
+        5) install_and_activate_plugin "$wpschemapro";;
+        6) install_and_activate_plugin "$ultimateelementor";;
+        7) install_and_activate_plugin "$convertproaddon";;
+        8) install_and_activate_plugin "$bbultimateaddon";;
+        9) install_and_activate_plugin "$allinonewpmigration";;
         10) install_and_activate_plugin ;;
+        11) display_installed_plugins ;;
+        12) delete_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
@@ -174,8 +182,9 @@ install_themes(){
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " choice_theme
     case $choice_theme in
-        0) install_and_activate_theme ;;
+        0) exit ;;
         1) install_and_activate_theme ;;
+        3) install_and_activate_theme ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
