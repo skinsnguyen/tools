@@ -106,8 +106,12 @@ ultimateelementor="https://tool.kienthuclinux.info/theme/ultimate-elementor-1.36
 convertproaddon="https://tool.kienthuclinux.info/theme/convertpro-addon-1.5.5.zip"
 bbultimateaddon="https://tool.kienthuclinux.info/theme/bb-ultimate-addon-1.35.3.zip"
 
-
-
+##-Theme-Divi
+divi="https://tool.kienthuclinux.info/theme/divi/Divi.zip"
+bloom="https://tool.kienthuclinux.info/theme/divi/bloom.zip"
+divibuilder="https://tool.kienthuclinux.info/theme/divi/divi-builder.zip"
+extra="https://tool.kienthuclinux.info/theme/divi/Extra.zip"
+monarch="https://tool.kienthuclinux.info/theme/divi/monarch.zip"
 
 
 
@@ -180,6 +184,30 @@ install_theme_astra() {
         10) install_and_activate_plugin ;;
         11) display_installed_plugins ;;
         12) delete_plugin ;;
+        *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
+    esac
+}
+instal_theme_Divi() {
+    echo "+---------------------------------------------+"
+    echo "| Chọn cài đặt Theme Divi                      |"
+    echo "+---------------------------------------------+"
+    echo "| 1. Theme Divi                               |"
+    echo "| 2. DIVI BUILDER                             |"
+    echo "| 3. EXTRA Magazine Theme                     |"
+    echo "| 4. BLOOM Email Opt-in Plugin                |"
+    echo "| 5. MONARCH Social Share & Follow Plugin     |"
+    echo "| 6. Quay về Trước                            |"
+    echo "| 0. Màng hình chính                          |"
+    echo "+---------------------------------------------+"
+    read -p "Nhập vào lựa chọn: " main_choice_divi
+    case $main_choice_divi in
+        0) main_menu;;
+        1) install_themes "$divi";;
+        2)install_and_activate_plugin "$divibuilder";;
+        3)install_and_activate_plugin "$extra=";;
+        4)install_and_activate_plugin "$bloom";;
+        5)install_and_activate_plugin "$monarch";;
+        6)install_themes ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
