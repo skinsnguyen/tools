@@ -171,6 +171,7 @@ while true; do
     echo -e "\033[1;36m| \033[0m6. \033[1;93mUltimate Elementor                     \033[1;36m|\033[0m"
     echo -e "\033[1;36m| \033[0m7. \033[1;94mconvertpro-addon                     \033[1;36m|\033[0m"
     echo -e "\033[1;34m| \033[0m8. \033[1;95mbb-ultimate-addon                \033[1;34m|\033[0m"
+    echo -e "\033[1;36m| \033[0m9. \033[1;92mLùi về Trước                       \033[1;36m|\033[0m"
     echo -e "\033[1;34m| \033[0m0. \033[1;96mQuay lại Menu Chính                \033[1;34m|\033[0m"
     echo -e "\033[1;32m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_thems_astra
@@ -184,10 +185,7 @@ while true; do
         6) install_and_activate_plugin "$ultimateelementor";;
         7) install_and_activate_plugin "$convertproaddon";;
         8) install_and_activate_plugin "$bbultimateaddon";;
-        9) install_and_activate_plugin "$allinonewpmigration";;
-        10) install_and_activate_plugin ;;
-        11) display_installed_plugins ;;
-        12) delete_plugin ;;
+        9) install_themes();;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 done
