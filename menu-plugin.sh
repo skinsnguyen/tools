@@ -183,7 +183,7 @@ install_themes(){
     read -p "Nhập vào lựa chọn: " choice_theme
     case $choice_theme in
         0) exit ;;
-        1) install_and_activate_theme ;;
+        1) install_theme_astra ;;
         3) install_and_activate_theme ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
