@@ -24,6 +24,13 @@ fi
 install_and_activate_theme() {
     theme_url=$1
     wp theme install "$theme_url" --activate --allow-root
+if [ $? -eq 1 ]; then
+    read -p "Theme đã tồn tại, bạn muốn thay thế (Y/N): " confirm
+        if [ "$confirm" = "Y" ] || [ "$confirm" = "y" ]; then
+            wp theme install "$theme_url" --activate --force --allow-root
+        fi
+ echo "Cài đặt thành công Theme"
+fi
 }
 # Hàm hiển thị danh sách plugin đã cài đặt
 display_installed_plugins() {
