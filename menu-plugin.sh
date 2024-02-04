@@ -181,7 +181,7 @@ install_theme_astra() {
 
 install_themes(){
     echo "+---------------------------------------------+"
-    echo "| Chọn loại cài đặt mà bạn muốn thực hiện:    |"
+    echo "| Chọn cài đặt Theme muốn thực hiện:    |"
     echo "+---------------------------------------------+"
     echo "| 1. cai đặt theme aztra                           |"
     echo "| 2. Cài đặt Dvide                           |"
@@ -202,17 +202,17 @@ main_menu() {
     # Các phần hiển thị thông tin máy chủ và hệ điều hành ở đây
 
     echo "+---------------------------------------------+"
-    echo "| Chọn loại cài đặt mà bạn muốn thực hiện:    |"
+    echo "| Chọn cài đặt Theme hoặc Plugin              |"
     echo "+---------------------------------------------+"
-    echo "| 1. cai đặt theme                            |"
-    echo "| 2. Cài đặt plugin                           |"
+    echo "| 1. Cài Đặt Theme                            |"
+    echo "| 2. Cài Đặt plugin                           |"
     echo "| 0. Thoát                                    |"
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " main_choice
     case $main_choice in
         0) exit ;;
-        1) install_plugin ;;
-        2) install_themes ;;
+        1) install_themes ;;
+        2) install_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
