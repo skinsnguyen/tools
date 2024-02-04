@@ -146,7 +146,7 @@ install_plugin() {
 
 install_theme_astra() {
     echo "+---------------------------------------------+"
-    echo "| Chọn Plugin mà bạn muốn cài:                |"
+    echo "|   Chọn Theme và plugin Astra                |"
     echo "+---------------------------------------------+"
     echo "| 1.         astra-child                      |"
     echo "| 2.         astra                            |"
@@ -181,10 +181,10 @@ install_theme_astra() {
 
 install_themes(){
     echo "+---------------------------------------------+"
-    echo "| Chọn cài đặt Theme muốn thực hiện:    |"
+    echo "| Chọn cài đặt Theme muốn thực hiện:          |"
     echo "+---------------------------------------------+"
-    echo "| 1. cai đặt theme aztra                           |"
-    echo "| 2. Cài đặt Dvide                           |"
+    echo "| 1. Cài Đặt Theme Astra                      |"
+    echo "| 2. Cài Đặt Divi                             |"
     echo "| 0. Thoát                                    |"
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " choice_theme
