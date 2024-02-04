@@ -188,6 +188,7 @@ install_theme_astra() {
     esac
 }
 instal_theme_Divi() {
+ while true; do
     echo "+---------------------------------------------+"
     echo "| Chọn cài đặt Theme Divi                      |"
     echo "+---------------------------------------------+"
@@ -201,7 +202,7 @@ instal_theme_Divi() {
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " main_choice_divi
     case $main_choice_divi in
-        0) main_menu;;
+        0) main_menu;;break ;;
         1) install_and_activate_theme "$divi";;
         2)install_and_activate_plugin "$divibuilder";;
         3)install_and_activate_plugin "$extra=";;
@@ -210,6 +211,7 @@ instal_theme_Divi() {
         6)install_themes ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
+    done
 }
 
 install_themes(){
