@@ -224,7 +224,7 @@ echo -e "\033[1;34m+---------------------------------------------+\033[0m"
     case $choice_theme in
         0) exit ;;
         1) install_theme_astra ;;
-        3) install_and_activate_theme ;;
+        3) instal_theme_Divi ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 }
