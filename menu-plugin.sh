@@ -134,7 +134,7 @@ echo -e "\033[1;32m| \033[0m9. \033[1;96mShow tất cả plugin             \033
 echo -e "\033[1;32m| \033[0m10. \033[1;91mXoá plugin                     \033[1;32m|\033[0m"
 echo -e "\033[1;32m| \033[0m11. \033[1;35mTắt plugin                     \033[1;32m|\033[0m"
 echo -e "\033[1;32m| \033[0m12. \033[1;34mupdate plugin                  \033[1;32m|\033[0m"
-echo -e "\033[1;32m| \033[0m13. \033[1;36mupdate plugin                  \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m13. \033[1;36mupdate all plugin                \033[1;32m|\033[0m"
 echo -e "\033[1;32m| \033[0m0. \033[1;92mQuay lại Menu Chính            \033[1;32m|\033[0m"
 echo -e "\033[1;34m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_plugin
