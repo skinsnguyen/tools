@@ -19,7 +19,6 @@ if [ $? -eq 1 ]; then
         fi
  echo "Cài đặt thành công"
 fi
-install_plugin
 }
 # Hàm cài đặt và kích hoạt Theme
 install_and_activate_theme() {
@@ -29,17 +28,14 @@ install_and_activate_theme() {
 # Hàm hiển thị danh sách plugin đã cài đặt
 display_installed_plugins() {
     wp plugin list --allow-root
-    install_plugin
 }
 # Hàm tắt alll plugin
 disable_all_plugin() {
 wp plugin deactivate --all --allow-root
-install_plugin
 }
 # Hàm Enable all plugin alll plugin
 enable_all_plugin() {
 wp plugin activate --all --allow-root
-install_plugin
 }
 # Hàm xoá plugin
 delete_plugin() {
@@ -55,7 +51,6 @@ delete_plugin() {
     else
         echo "Không tìm thấy plugin $plugin_name."
     fi
-    install_plugin
 }
 # Hàm update plugin
 update_plugin() {
@@ -70,19 +65,18 @@ update_plugin() {
     else
         echo "Không tìm thấy plugin $plugin_update."
     fi
-    install_plugin
 }
 
 #Hàm update all plugin
 update_all_plugin() {
 wp plugin update --all --allow-root
-install_plugin
 }
 
 #Hàm Hiện Show Theme.
 show_theme_list() {
 wp theme list --allow-root
 }
+
 ##-Danh Sách Plugin
 rocket="https://tool.kienthuclinux.info/plugin/wp-rocket_3.12.5.3.zip"
 iThemesSecurityPro="https://tool.kienthuclinux.info/plugin/ithemes-security-pro-8.0.2.zip"
@@ -158,6 +152,7 @@ done
 }
 
 install_theme_astra() {
+while true; do
     echo -e "\033[1;31m+---------------------------------------------+\033[0m"
     echo -e "\033[1;31m| \033[0m   Chọn Theme và plugin Astra                \033[1;31m|\033[0m"
     echo -e "\033[1;32m+---------------------------------------------+\033[0m"
@@ -173,7 +168,7 @@ install_theme_astra() {
     echo -e "\033[1;32m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_thems_astra
     case $choice_thems_astra in
-        0) main_menu ;;
+        0) main_menu;break ;;;;
         1) install_and_activate_theme "$astrachild";;
         2) install_and_activate_theme "$astra";;
         3) install_and_activate_plugin "$astraaddonplugin";;
@@ -188,6 +183,7 @@ install_theme_astra() {
         12) delete_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
+done
 }
 instal_theme_Divi() {
  while true; do
