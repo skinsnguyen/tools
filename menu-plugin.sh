@@ -160,7 +160,7 @@ install_theme_astra() {
     echo -e "\033[1;32m| \033[0m3. \033[1;35mAstra Addon Plugin                  \033[1;32m|\033[0m"
     echo -e "\033[1;36m| \033[0m4. \033[1;91mAstra-premium-sites                \033[1;36m|\033[0m"
     echo -e "\033[1;36m| \033[0m5. \033[1;92mwp-schema-pro                       \033[1;36m|\033[0m"
-    echo -e "\033[1;36m| \033[0m6. \033[1;93mwp-schema-pro                     \033[1;36m|\033[0m"
+    echo -e "\033[1;36m| \033[0m6. \033[1;93mUltimate Elementor                     \033[1;36m|\033[0m"
     echo -e "\033[1;36m| \033[0m7. \033[1;94mconvertpro-addon                     \033[1;36m|\033[0m"
     echo -e "\033[1;34m| \033[0m8. \033[1;95mbb-ultimate-addon                \033[1;34m|\033[0m"
     echo -e "\033[1;34m| \033[0m0. \033[1;96mQuay lại Menu Chính                \033[1;34m|\033[0m"
