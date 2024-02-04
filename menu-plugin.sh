@@ -168,7 +168,7 @@ while true; do
     echo -e "\033[1;32m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_thems_astra
     case $choice_thems_astra in
-        0) main_menu;break ;;;;
+        0) main_menu;break;;
         1) install_and_activate_theme "$astrachild";;
         2) install_and_activate_theme "$astra";;
         3) install_and_activate_plugin "$astraaddonplugin";;
@@ -200,7 +200,7 @@ instal_theme_Divi() {
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " main_choice_divi
     case $main_choice_divi in
-        0) main_menu;;break ;;
+        0) main_menu;break ;;
         1) install_and_activate_theme "$divi";;
         2)install_and_activate_plugin "$divibuilder";;
         3)install_and_activate_plugin "$extra=";;
