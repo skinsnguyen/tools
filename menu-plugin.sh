@@ -117,6 +117,7 @@ monarch="https://tool.kienthuclinux.info/theme/divi/monarch.zip"
 
 # Menu Script
 install_plugin() {
+while true; do
 echo -e "\033[1;34m+---------------------------------------------+\033[0m"
 echo -e "\033[1;34m| \033[0mChọn Plugin mà bạn muốn cài:                \033[1;34m|\033[0m"
 echo -e "\033[1;34m+---------------------------------------------+\033[0m"
@@ -137,7 +138,7 @@ echo -e "\033[1;32m| \033[0m0. \033[1;92mQuay lại Menu Chính            \033[
 echo -e "\033[1;34m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_plugin
     case $choice_plugin in
-        0) main_menu;;
+        0) main_menu;break;;
         1) install_and_activate_plugin "$WPMUDevDashboard";;
         2) install_and_activate_plugin "$SEORankMathPro";;
         3) install_and_activate_plugin "$astrapremiumsites";;
@@ -153,6 +154,7 @@ echo -e "\033[1;34m+---------------------------------------------+\033[0m"
         13) update_all_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
+done
 }
 
 install_theme_astra() {
