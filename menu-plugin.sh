@@ -129,7 +129,7 @@ install_plugin() {
     echo "| 11.          Tắt plugin                     |"
     echo "| 12.       update plugin                     |"
     echo "| 13.     update plugin                       |"
-    echo "| 0.     Quay lại Menu Chính                      |"
+    echo "| 0.     Quay lại Menu Chính                  |"
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " choice_plugin
     case $choice_plugin in
@@ -162,9 +162,7 @@ install_theme_astra() {
     echo "| 5.      wp-schema-pro                       |"
     echo "| 6.        wp-schema-pro                     |"
     echo "| 7.     convertpro-addon                     |"
-    echo "| 8.         bb-ultimate-addon         |"
-    echo "| 9.                            |"
-    echo "| 10.                      |"
+    echo "| 8.         bb-ultimate-addon                |"
     echo "| 0. Quay lại Menu Chính                      |"
     echo "+---------------------------------------------+"
     read -p "Nhập vào lựa chọn: " choice_thems_astra
