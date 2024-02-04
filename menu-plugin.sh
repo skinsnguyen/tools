@@ -113,24 +113,24 @@ bbultimateaddon="https://tool.kienthuclinux.info/theme/bb-ultimate-addon-1.35.3.
 
 # Menu Script
 install_plugin() {
-    echo "+---------------------------------------------+"
-    echo "| Chọn Plugin mà bạn muốn cài:                |"
-    echo "+---------------------------------------------+"
-    echo "| 1.          WP-Rocket                       |"
-    echo "| 2.      WPMU-Dev-Dashboard                  |"
-    echo "| 3.      SEO-Rank-Math-Pro                   |"
-    echo "| 4.       Elementskit.                       |"
-    echo "| 5.      sitepress-multilingual              |"
-    echo "| 6.        Seedprod                          |"
-    echo "| 7.        Wpstaging                         |"
-    echo "| 8.   all-in-one-wp-migration                |"
-    echo "| 9.       Show tất cả plugin                 |"
-    echo "| 10.          Xoá plugin                     |"
-    echo "| 11.          Tắt plugin                     |"
-    echo "| 12.       update plugin                     |"
-    echo "| 13.     update plugin                       |"
-    echo "| 0.     Quay lại Menu Chính                  |"
-    echo "+---------------------------------------------+"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
+echo -e "\033[1;34m| \033[0mChọn Plugin mà bạn muốn cài:                \033[1;34m|\033[0m"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
+echo -e "\033[1;32m| \033[0m1. \033[1;33mWP-Rocket                       \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m2. \033[1;36mWPMU-Dev-Dashboard              \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m3. \033[1;35mSEO-Rank-Math-Pro               \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m4. \033[1;31mElementskit.                   \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m5. \033[1;92msitepress-multilingual          \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m6. \033[1;93mSeedprod                        \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m7. \033[1;94mWpstaging                       \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m8. \033[1;95mall-in-one-wp-migration        \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m9. \033[1;96mShow tất cả plugin             \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m10. \033[1;91mXoá plugin                     \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m11. \033[1;35mTắt plugin                     \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m12. \033[1;34mupdate plugin                  \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m13. \033[1;36mupdate plugin                  \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m0. \033[1;92mQuay lại Menu Chính            \033[1;32m|\033[0m"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_plugin
     case $choice_plugin in
         0) main_menu;;
@@ -152,19 +152,19 @@ install_plugin() {
 }
 
 install_theme_astra() {
-    echo "+---------------------------------------------+"
-    echo "|   Chọn Theme và plugin Astra                |"
-    echo "+---------------------------------------------+"
-    echo "| 1.         astra-child                      |"
-    echo "| 2.         astra                            |"
-    echo "| 3.      Astra Addon Plugin                  |"
-    echo "| 4.       Astra-premium-sites                |"
-    echo "| 5.      wp-schema-pro                       |"
-    echo "| 6.        wp-schema-pro                     |"
-    echo "| 7.     convertpro-addon                     |"
-    echo "| 8.         bb-ultimate-addon                |"
-    echo "| 0. Quay lại Menu Chính                      |"
-    echo "+---------------------------------------------+"
+    echo -e "\033[1;31m+---------------------------------------------+\033[0m"
+    echo -e "\033[1;31m| \033[0m   Chọn Theme và plugin Astra                \033[1;31m|\033[0m"
+    echo -e "\033[1;32m+---------------------------------------------+\033[0m"
+    echo -e "\033[1;32m| \033[0m1. \033[1;33mastra-child                      \033[1;32m|\033[0m"
+    echo -e "\033[1;32m| \033[0m2. \033[1;34mastra                            \033[1;32m|\033[0m"
+    echo -e "\033[1;32m| \033[0m3. \033[1;35mAstra Addon Plugin                  \033[1;32m|\033[0m"
+    echo -e "\033[1;36m| \033[0m4. \033[1;91mAstra-premium-sites                \033[1;36m|\033[0m"
+    echo -e "\033[1;36m| \033[0m5. \033[1;92mwp-schema-pro                       \033[1;36m|\033[0m"
+    echo -e "\033[1;36m| \033[0m6. \033[1;93mwp-schema-pro                     \033[1;36m|\033[0m"
+    echo -e "\033[1;36m| \033[0m7. \033[1;94mconvertpro-addon                     \033[1;36m|\033[0m"
+    echo -e "\033[1;34m| \033[0m8. \033[1;95mbb-ultimate-addon                \033[1;34m|\033[0m"
+    echo -e "\033[1;34m| \033[0m0. \033[1;96mQuay lại Menu Chính                \033[1;34m|\033[0m"
+    echo -e "\033[1;32m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_thems_astra
     case $choice_thems_astra in
         0) main_menu ;;
@@ -185,13 +185,13 @@ install_theme_astra() {
 }
 
 install_themes(){
-    echo "+---------------------------------------------+"
-    echo "| Chọn cài đặt Theme muốn thực hiện:          |"
-    echo "+---------------------------------------------+"
-    echo "| 1. Cài Đặt Theme Astra                      |"
-    echo "| 2. Cài Đặt Divi                             |"
-    echo "| 0. Thoát                                    |"
-    echo "+---------------------------------------------+"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
+echo -e "\033[1;34m| \033[0mChọn cài đặt Theme muốn thực hiện:          \033[1;34m|\033[0m"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
+echo -e "\033[1;32m| \033[0m1. \033[1;33mCài Đặt Theme Astra              \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m2. \033[1;36mCài Đặt Divi                     \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m0. \033[1;91mThoát                             \033[1;32m|\033[0m"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
     read -p "Nhập vào lựa chọn: " choice_theme
     case $choice_theme in
         0) exit ;;
@@ -206,13 +206,14 @@ install_themes(){
 main_menu() {
     # Các phần hiển thị thông tin máy chủ và hệ điều hành ở đây
 
-    echo "+---------------------------------------------+"
-    echo "| Chọn cài đặt Theme hoặc Plugin              |"
-    echo "+---------------------------------------------+"
-    echo "| 1. Cài Đặt Theme                            |"
-    echo "| 2. Cài Đặt plugin                           |"
-    echo "| 0. Thoát                                    |"
-    echo "+---------------------------------------------+"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
+echo -e "\033[1;34m| \033[0mChọn cài đặt Theme hoặc Plugin              \033[1;34m|\033[0m"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
+echo -e "\033[1;32m| \033[0m1. \033[1;33mCài Đặt Theme                   \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m2. \033[1;36mCài Đặt plugin                  \033[1;32m|\033[0m"
+echo -e "\033[1;32m| \033[0m0. \033[1;91mThoát                           \033[1;32m|\033[0m"
+echo -e "\033[1;34m+---------------------------------------------+\033[0m"
+
     read -p "Nhập vào lựa chọn: " main_choice
     case $main_choice in
         0) exit ;;
