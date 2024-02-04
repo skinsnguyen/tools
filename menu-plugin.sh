@@ -202,7 +202,7 @@ instal_theme_Divi() {
     read -p "Nhập vào lựa chọn: " main_choice_divi
     case $main_choice_divi in
         0) main_menu;;
-        1) install_themes "$divi";;
+        1) install_and_activate_theme "$divi";;
         2)install_and_activate_plugin "$divibuilder";;
         3)install_and_activate_plugin "$extra=";;
         4)install_and_activate_plugin "$bloom";;
