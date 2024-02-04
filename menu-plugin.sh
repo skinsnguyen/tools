@@ -19,6 +19,7 @@ if [ $? -eq 1 ]; then
         fi
  echo "Cài đặt thành công"
 fi
+install_plugin
 }
 # Hàm cài đặt và kích hoạt Theme
 install_and_activate_theme() {
@@ -28,14 +29,17 @@ install_and_activate_theme() {
 # Hàm hiển thị danh sách plugin đã cài đặt
 display_installed_plugins() {
     wp plugin list --allow-root
+    install_plugin
 }
 # Hàm tắt alll plugin
 disable_all_plugin() {
 wp plugin deactivate --all --allow-root
+install_plugin
 }
 # Hàm Enable all plugin alll plugin
 enable_all_plugin() {
 wp plugin activate --all --allow-root
+install_plugin
 }
 # Hàm xoá plugin
 delete_plugin() {
@@ -51,6 +55,7 @@ delete_plugin() {
     else
         echo "Không tìm thấy plugin $plugin_name."
     fi
+    install_plugin
 }
 # Hàm update plugin
 update_plugin() {
@@ -65,11 +70,13 @@ update_plugin() {
     else
         echo "Không tìm thấy plugin $plugin_update."
     fi
+    install_plugin
 }
 
 #Hàm update all plugin
 update_all_plugin() {
 wp plugin update --all --allow-root
+install_plugin
 }
 
 #Hàm Hiện Show Theme.
