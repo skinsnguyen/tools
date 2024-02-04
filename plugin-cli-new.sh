@@ -36,7 +36,7 @@ install_and_activate_plugin() {
     plugin_url=$1
     wp plugin install "$plugin_url" --activate --allow-root
 
-    if [ $? -eq 0 ]; then
+    if [ $? -eq 1 ]; then
         read -p "Plugin đã tồn tại, bạn muốn thay thế (Y/N): " confirm
         if [ "$confirm" = "Y" ] || [ "$confirm" = "y" ]; then
             wp plugin install "$plugin_url" --activate --force --allow-root
