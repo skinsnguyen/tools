@@ -201,7 +201,7 @@ while true; do
         6) install_and_activate_plugin "$ultimateelementor";;
         7) install_and_activate_plugin "$convertproaddon";;
         8) install_and_activate_plugin "$bbultimateaddon";;
-        9) install_themes();;
+        9) install_themes;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
 done
