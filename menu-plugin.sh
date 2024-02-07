@@ -46,14 +46,34 @@ echo "Phiên bản Wordpress đang dung: $corewp"
 #####################################
 urlhome=$(wp option get home --allow-root)
 siteurl=$(wp option get siteurl --allow-root)
-echo "website có url: $urlhome\n"
-echo "website có url: $siteurl\n"
+#echo "website có url: $urlhome\n"
+#echo "website có url: $siteurl\n"
 
 theme_option=$(wp option list --allow-root | grep current_theme)
-echo "Theme đang sử dụng $theme_option\n"
+#echo "Theme đang sử dụng $theme_option\n"
 ##############################
 corewp=$(wp core version --allow-root)
 echo "phiên bản wordpress đang sử dụng: $corewp"
+# Define color codes
+COLOR1='\033[31m'    # Red
+COLOR2='\033[32m'    # Green
+COLOR3='\033[33m'    # Yellow
+COLOR4='\033[34m'    # Blue
+COLOR5='\033[35m'    # Purple
+COLOR6='\033[36m'    # Cyan
+COLOR7='\033[37m'    # White
+RESET='\033[0m'      # Reset color
+
+# Display text with colors
+echo -e "${COLOR1}>>===========================================================<<${RESET}"
+echo -e "${COLOR2}||.  website có url $siteurl Và  website có url: $urlhome    ||${RESET}"
+echo -e "${COLOR3}||.  Phiên bản wordpres hiện tại: $corewp                    ||${RESET}"
+echo -e "${COLOR4}||.  Theme Hiện Tại đang sử dụng $theme_option               ||${RESET}"
+echo -e "${COLOR5}||.                                                          ||${RESET}"
+echo -e "${COLOR6}||.                                                          ||${RESET}"
+echo -e "${COLOR7}||.                                                          ||${RESET}"
+echo -e "${COLOR1}>>===========================================================<<${RESET}"
+
 
 }
 
