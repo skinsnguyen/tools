@@ -262,7 +262,7 @@ echo -e "\033[1;34m+---------------------------------------------+\033[0m"
 #main_menu
 main_menu() {
     # Các phần hiển thị thông tin máy chủ và hệ điều hành ở đây
-
+dislay_play
 echo -e "\033[1;34m+---------------------------------------------+\033[0m"
 echo -e "\033[1;34m| \033[0mChọn cài đặt Theme hoặc Plugin              \033[1;34m|\033[0m"
 echo -e "\033[1;34m+---------------------------------------------+\033[0m"
@@ -278,10 +278,8 @@ echo -e "\033[1;34m+---------------------------------------------+\033[0m"
         2) install_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
-dislay_play
-}
 
-dislay_play
+}
 main_menu
 
 #rm -f ${pwdd}/plugin-cli-new.sh;
