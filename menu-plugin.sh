@@ -35,8 +35,9 @@ echo -e "${COLOR1}+==================== \033[32mhttps://kienthuclinux.info \033[
 }
 ####################--Thong-so-#############################
 check_wp_moinhat(){
+echo "Phiên bản mới nhất là: \n"
 version=$(curl -s https://api.wordpress.org/core/stable-check/1.0/ | egrep 'latest|outdated')
-echo -e "version=$version\n" | tail -n 5
+echo -e "version=$version" | tail -n 5
 }
 
 check_wp_thongso_hientai(){
