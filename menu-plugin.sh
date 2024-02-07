@@ -320,5 +320,6 @@ echo -e "\033[1;34m+---------------------------------------------+\033[0m"
 
 }
 main_menu
-
+check_wp_moinhat
+check_wp_thongso_hientai
 #rm -f ${pwdd}/plugin-cli-new.sh;
