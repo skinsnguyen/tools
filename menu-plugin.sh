@@ -7,7 +7,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 pwdd=`pwd`
 
-set -x
+#set -x
 dislay_play(){
 
 echo -e "\033[31m  _    _                                    _   _                 \033[0m"
@@ -278,8 +278,10 @@ echo -e "\033[1;34m+---------------------------------------------+\033[0m"
         2) install_plugin ;;
         *) echo "Lựa chọn không hợp lệ. Thoát." && exit 1 ;;
     esac
+dislay_play
 }
 
-main_menu
 dislay_play
+main_menu
+
 #rm -f ${pwdd}/plugin-cli-new.sh;
