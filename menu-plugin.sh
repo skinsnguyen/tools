@@ -192,17 +192,27 @@ done
 }
 instal_theme_Divi() {
  while true; do
-    echo "+---------------------------------------------+"
-    echo "| Chọn cài đặt Theme Divi                      |"
-    echo "+---------------------------------------------+"
-    echo "| 1. Theme Divi                               |"
-    echo "| 2. DIVI BUILDER                             |"
-    echo "| 3. EXTRA Magazine Theme                     |"
-    echo "| 4. BLOOM Email Opt-in Plugin                |"
-    echo "| 5. MONARCH Social Share & Follow Plugin     |"
-    echo "| 6. Quay về Trước                            |"
-    echo "| 0. Màng hình chính                          |"
-    echo "+---------------------------------------------+"
+COLOR1='\033[0;31m'    # Red
+COLOR2='\033[0;32m'    # Green
+COLOR3='\033[0;33m'    # Yellow
+COLOR4='\033[0;34m'    # Blue
+COLOR5='\033[0;35m'    # Purple
+COLOR6='\033[0;36m'    # Cyan
+COLOR7='\033[0;37m'    # White
+RESET='\033[0m'
+
+echo -e "${COLOR1}+---------------------------------------------+${RESET}"
+echo -e "${COLOR2}| ${COLOR3}Chọn cài đặt Theme Divi                      ${COLOR2}|${RESET}"
+echo -e "${COLOR4}+---------------------------------------------+${RESET}"
+echo -e "${COLOR5}| ${COLOR6}1. Theme Divi                               ${COLOR5}|${RESET}"
+echo -e "${COLOR7}| ${COLOR1}2. DIVI BUILDER                             ${COLOR7}|${RESET}"
+echo -e "${COLOR2}| ${COLOR3}3. EXTRA Magazine Theme                     ${COLOR2}|${RESET}"
+echo -e "${COLOR4}| ${COLOR5}4. BLOOM Email Opt-in Plugin                ${COLOR4}|${RESET}"
+echo -e "${COLOR6}| ${COLOR7}5. MONARCH Social Share & Follow Plugin     ${COLOR6}|${RESET}"
+echo -e "${COLOR1}| ${COLOR2}6. Quay về Trước                            ${COLOR1}|${RESET}"
+echo -e "${COLOR3}| ${COLOR4}0. Màng hình chính                          ${COLOR3}|${RESET}"
+echo -e "${COLOR5}+---------------------------------------------+${RESET}"
+
     read -p "Nhập vào lựa chọn: " main_choice_divi
     case $main_choice_divi in
         0) main_menu;break ;;
