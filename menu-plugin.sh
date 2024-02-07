@@ -33,6 +33,28 @@ echo -e "${COLOR1}|                             |___/                           
 echo -e "${COLOR1}+==================== \033[32mhttps://kienthuclinux.info \033[31m===============================================+${RESET}"
 
 }
+####################--Thong-so-#############################
+check_wp_moinhat(){
+version=$(curl -s https://api.wordpress.org/core/stable-check/1.0/ | egrep 'latest|outdated')
+echo -e "version=$version\n" | tail -n 5
+}
+
+check_wp_thongso_hientai{
+corewp=$(wp core version --allow-root)
+echo "Phiên bản Wordpress đang dung: $corewp"
+#####################################
+urlhome=$(wp option get home --allow-root)
+siteurl=$(wp option get siteurl --allow-root)
+echo "website có url: $urlhome\n"
+echo "website có url: $siteurl\n"
+
+theme_option=$(wp option list --allow-root | grep current_theme)
+echo "Theme đang sử dụng $theme_option\n"
+##############################
+corewp=$(wp core version --allow-root)
+echo "phiên bản wordpress đang sử dụng: $corewp"
+
+}
 
 
 
