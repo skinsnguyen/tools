@@ -34,6 +34,10 @@ echo -e "${COLOR1}+==================== \033[32mhttps://kienthuclinux.info \033[
 
 }
 
+
+
+
+##############################################################
 # Hàm cài đặt và kích hoạt plugin
 install_and_activate_plugin() {
     plugin_url=$1
@@ -58,6 +62,7 @@ if [ $? -eq 1 ]; then
  echo "Cài đặt thành công Theme"
 fi
 }
+##########################--Plugin--##########################
 # Hàm hiển thị danh sách plugin đã cài đặt
 display_installed_plugins() {
     wp plugin list --allow-root
@@ -104,7 +109,7 @@ update_plugin() {
 update_all_plugin() {
 wp plugin update --all --allow-root
 }
-
+##########################--Theme--##########################
 #Hàm Hiện Show Theme.
 show_theme_list() {
 wp theme list --allow-root
