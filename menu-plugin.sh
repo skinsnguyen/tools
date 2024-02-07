@@ -39,7 +39,7 @@ version=$(curl -s https://api.wordpress.org/core/stable-check/1.0/ | egrep 'late
 echo -e "version=$version\n" | tail -n 5
 }
 
-check_wp_thongso_hientai{
+check_wp_thongso_hientai(){
 corewp=$(wp core version --allow-root)
 echo "Phiên bản Wordpress đang dung: $corewp"
 #####################################
