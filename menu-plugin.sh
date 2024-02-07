@@ -283,5 +283,5 @@ echo -e "\033[1;34m+---------------------------------------------+\033[0m"
 }
 
 main_menu
-
+dislay_play
 #rm -f ${pwdd}/plugin-cli-new.sh;
