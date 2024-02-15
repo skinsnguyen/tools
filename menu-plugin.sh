@@ -68,7 +68,7 @@ RESET='\033[0m'      # Reset color
 echo -e "${COLOR1}>>===========================================================<<${RESET}"
 echo -e "${COLOR2}||.  website có url $siteurl Và  website có url: $urlhome    ||${RESET}"
 echo -e "${COLOR3}||.  Phiên bản wordpres hiện tại: $corewp                    ||${RESET}"
-echo -e "${COLOR4}||.  Theme Hiện Tại đang sử dụng $theme_option               ||${RESET}"
+echo -e "${COLOR7}||.  Theme Hiện Tại đang sử dụng $theme_option               ||${RESET}"
 echo -e "${COLOR5}||.                                                          ||${RESET}"
 echo -e "${COLOR6}||.                                                          ||${RESET}"
 echo -e "${COLOR7}||.                                                          ||${RESET}"
