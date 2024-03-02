@@ -10,7 +10,7 @@ do
 echo ">> User ${USER_SSH} đã tồn tại."
 read -p "Step 1 : Điền User thiết lại ssh Key...: " USER_SSH
 done
-useradd -m ${USER_SSH} -p ${PASSWORD} && echo ">> Tạo Thành Công ${USER_SSH}" || echo ">> Fail create user ${USER_SSH}"
+useradd -m ${USER_SSH} -p ${PASSWORD} && echo ">> Tạo Thành Công ${USER_SSH}" || echo ">> Tạo ${USER_SSH} Không Thành Công"
 
 
 echo
