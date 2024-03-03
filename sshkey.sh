@@ -38,6 +38,30 @@ function enter_existing_key() {
     
     # Gọi các lệnh nhập key tại đây
 }
+#Cấu hình ssh cho user
+function config_ssh(){
+# Cấu hình SSH
+echo "Cấu hình SSH..."
+config_file="/etc/ssh/sshd_config"
+
+# Kiểm tra xem file cấu hình tồn tại hay không
+if [ ! -e "$config_file" ]; then
+    echo "Lỗi: File cấu hình '$config_file' không tồn tại."
+    exit 1
+fi
+
+# Thêm cấu hình vào file
+echo "" >> "$config_file"
+echo "Match Group ${USER_SSH}" >> "$config_file"
+echo "   AuthorizedKeysFile /home/${USER_SSH}/.ssh/authorized_keys" >> "$config_file"
+
+# Kiểm tra xem đã thêm thành công hay không
+if [ $? -eq 0 ]; then
+    echo "Đã thêm cấu hình thành công."
+else
+    echo "Lỗi: Không thể thêm cấu hình vào file."
+fi
+}
 
 function show_menu() {
     echo "----- Menu Lựa Chọn -----"
