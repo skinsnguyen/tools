@@ -3,43 +3,58 @@
 # 02-03-2024
 # Kiểm tra
 
+#!/bin/bash
 
-
-echo
-echo "Cấu hình SSH..."
-echo "" >> /etc/ssh/sshd_config
-echo "Match Group ${USER_SSH}" >> /etc/ssh/sshd_config
-echo "   AuthorizedKeysFile /home/${USER_SSH}/.ssh/authorized_keys" >> /etc/ssh/sshd_config
-
-#Tạo user passwd và kiểm tra user.
-function create_user_ssh(){
-PASSWORD=`< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-12}; echo;`
-echo "! !"
-read -p "Step 1 : Điền User thiết lại ssh Key...:  " USER_SSH
-while [[ $(grep -o "${USER_SSH}" /etc/passwd) ]]
-do
-echo ">> User ${USER_SSH} đã tồn tại."
-read -p "Step 1 : Điền User thiết lại ssh Key...: " USER_SSH
-done
-useradd -m ${USER_SSH} -p ${PASSWORD} && echo ">> Tạo Thành Công ${USER_SSH}" || echo ">> Tạo ${USER_SSH} Không Thành Công"
-mkdir -p /home/${USER_SSH}/.ssh && chown ${USER_SSH}:${USER_SSH} /home/${USER_SSH}/.ssh && chmod 400 /home/${USER_SSH}/.ssh && echo ">> Sucess create /home/${USER_SSH}/.ssh drectory" || echo ">> Fail create /home/${USER_SSH}/.ssh directory"
+# Function to check if a user already exists
+user_exists() {
+    local username=$1
+    [[ $(grep -o "${username}" /etc/passwd) ]]
 }
 
-function create_ssh_key() {
-    # Thực hiện các lệnh để tạo SSH Key
-    echo "Bắt đầu quá trình tạo SSH Key..."
-    create_user_ssh
+# Function to generate a random password
+generate_password() {
+    local length=${1:-12}
+    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c"${length}"; echo
+}
+
+# Function to create a new user
+create_new_user() {
+    local USER_SSH PASSWORD
+    PASSWORD=$(generate_password)
     
-    # Gọi các lệnh tạo SSH Key tại đây
+    read -p "Step 1: Nhập tên người dùng để thiết lập SSH Key: " USER_SSH
+
+    while user_exists "${USER_SSH}"; do
+        echo ">> Người dùng ${USER_SSH} đã tồn tại."
+        read -p "Chọn tên người dùng khác: " USER_SSH
+    done
+
+    useradd -m ${USER_SSH} -p ${PASSWORD} && echo ">> Tạo Thành Công ${USER_SSH}" || { echo ">> Tạo ${USER_SSH} Không Thành Công"; return 1; }
+
+    mkdir -p /home/${USER_SSH}/.ssh && \
+    chown ${USER_SSH}:${USER_SSH} /home/${USER_SSH}/.ssh && \
+    chmod 700 /home/${USER_SSH}/.ssh && \
+    echo ">> Tạo Thành Công thư mục /home/${USER_SSH}/.ssh" || { echo ">> Không Thành Công tạo thư mục /home/${USER_SSH}/.ssh"; return 1; }
+
+    touch /home/${USER_SSH}/.ssh/authorized_keys && \
+    chmod 600 /home/${USER_SSH}/.ssh/authorized_keys && \
+    echo ">> Tạo Thành Công tệp /home/${USER_SSH}/.ssh/authorized_keys" || { echo ">> Không Thành Công tạo tệp /home/${USER_SSH}/.ssh/authorized_keys"; return 1; }
 }
 
-function enter_existing_key() {
-    # Thực hiện các lệnh để nhập key
-    echo "Bắt đầu quá trình nhập key..."
-    create_user_ssh
-    
-    # Gọi các lệnh nhập key tại đây
+# Function to input key for an existing user
+input_key_for_existing_user() {
+    local USER_SSH
+    read -p "Step 1: Nhập tên người dùng để thiết lập SSH Key: " USER_SSH
+
+    if user_exists "${USER_SSH}"; then
+        # Add logic to input key for existing user
+        echo ">> Nhập key cho người dùng ${USER_SSH}"
+    else
+        echo ">> Người dùng ${USER_SSH} không tồn tại. Thoát."
+        return 1
+    fi
 }
+
 #Cấu hình ssh cho user
 function config_ssh(){
 # Cấu hình SSH
