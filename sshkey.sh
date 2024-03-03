@@ -32,6 +32,7 @@ create_new_user() {
     useradd -m ${USER_SSH} -p ${PASSWORD} && echo ">> Tạo Thành Công ${USER_SSH}" || { echo ">> Tạo ${USER_SSH} Không Thành Công"; return 1; }
 
 ssh-keygen -f /home/${USER_SSH}/.ssh/id_rsa -t ed25519 -C ${USER_SSH}@`namnh.com`
+mkdir -p /home/namnh/.ssh
 cp -rf /home/${USER_SSH}/.ssh/id_rsa /home/${USER_SSH}/.ssh/authorized_keys
 chmod 600 /home/${USER_SSH}/.ssh/authorized_keys
 chmod 700 /home/${USER_SSH}/.ssh/
