@@ -31,22 +31,16 @@ create_new_user() {
 
     useradd -m ${USER_SSH} -p ${PASSWORD} && echo ">> Tạo Thành Công ${USER_SSH}" || { echo ">> Tạo ${USER_SSH} Không Thành Công"; return 1; }
 
+ssh-keygen -f /home/${USER_SSH}/.ssh/id_rsa -t ed25519 -C ${USER_SSH}@`namnh.com`
+cp -rf /home/${USER_SSH}/.ssh/id_rsa /home/${USER_SSH}/.ssh/authorized_keys
+chmod 600 /home/${USER_SSH}/.ssh/authorized_keys
+chmod 700 /home/${USER_SSH}/.ssh/
+chmod go-w /home/${USER_SSH}/.ssh/
+chmod go-w /home/${USER_SSH}/
+chown -R ${USER_SSH}:${USER_SSH} /home/${USER_SSH}
+chattr +i /home/${USERNAME}/.ssh/authorized_keys
 
-chmod 600 /home/${USERNAME}/.ssh/authorized_keys
-chmod 700 /home/${USERNAME}/.ssh/
-chmod go-w /home/${USERNAME}/.ssh/
-chmod go-w /home/${USERNAME}/
-chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/
-chattr +i /home/${USERNAME}/.ssh/authorized_keys && echo ">> Sucess
-create /home/$USERNAME/.ssh/authorized_keys file" || echo ">> Fail create SSH-PROXY – Log Terminal Session SSH /home/$USERNAME/.ssh/authorized_keys file"
-echo "Done !"
-exit 0
-    ssh-keygen -f /home/${USER_SSH}/.ssh/id_rsa -t ed25519 -C ${USER_SSH}@`namnh.com`
-    cp -rf /home/${USER_SSH}/.ssh/id_rsa /home/${USER_SSH}/.ssh//authorized_keys
-    chown ${USER_SSH}:${USER_SSH} -R /home/${USER_SSH}/.ssh
-    chmod 600 /home/${USER_SSH}/.ssh/authorized_keys
-    echo ">> Tạo Thành Công tệp /home/${USER_SSH}/.ssh/authorized_keys" || { echo ">> Không Thành Công tạo tệp /home/${USER_SSH}/.ssh/authorized_keys"; return 1; }
-    cat /home/${USER_SSH}/.ssh/authorized_keys
+cat /home/${USER_SSH}/.ssh/authorized_keys
     
 }
 
