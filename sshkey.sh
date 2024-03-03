@@ -59,7 +59,7 @@ input_key_for_existing_user() {
 }
 
 #Cấu hình ssh cho user
-function config_ssh(){
+config_ssh(){
 # Cấu hình SSH
 echo "Cấu hình SSH..."
 config_file="/etc/ssh/sshd_config"
@@ -83,7 +83,7 @@ else
 fi
 }
 
-function show_menu() {
+show_menu() {
     echo "----- Menu Lựa Chọn -----"
     echo "1. Tạo SSH Key"
     echo "2. Nhập key"
@@ -91,17 +91,17 @@ function show_menu() {
     echo "-------------------------"
 }
 
-function get_user_choice() {
+get_user_choice() {
     read -p "Nhập lựa chọn của bạn (1-3): " choice
     case $choice in
-        1) create_ssh_key ;;
-        2) enter_existing_key ;;
+        1) create_new_user ;;
+        2) input_key_for_existing_user ;;
         3) echo "Thoát"; exit ;;
         *) echo "Lựa chọn không hợp lệ. Vui lòng chọn từ 1 đến 3." ;;
     esac
 }
 
-function get_user_confirmation() {
+get_user_confirmation() {
 local max_attempts=5
 local attempts=0
     while [ "$attempts" -lt "$max_attempts" ]; do
