@@ -28,6 +28,7 @@ mkdir -p /home/${USER_SSH}/.ssh && chown ${USER_SSH}:${USER_SSH} /home/${USER_SS
 function create_ssh_key() {
     # Thực hiện các lệnh để tạo SSH Key
     echo "Bắt đầu quá trình tạo SSH Key..."
+    create_user_ssh
     
     # Gọi các lệnh tạo SSH Key tại đây
 }
@@ -35,6 +36,7 @@ function create_ssh_key() {
 function enter_existing_key() {
     # Thực hiện các lệnh để nhập key
     echo "Bắt đầu quá trình nhập key..."
+    create_user_ssh
     
     # Gọi các lệnh nhập key tại đây
 }
