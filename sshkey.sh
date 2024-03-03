@@ -13,10 +13,7 @@ echo "   AuthorizedKeysFile /home/${USER_SSH}/.ssh/authorized_keys" >> /etc/ssh/
 
 #Tạo user passwd và kiểm tra user.
 function create_user_ssh(){
-local max_attempts=3
-local attempts=0
-local confirm=""
-local PASSWORD=`< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-12}; echo;`
+PASSWORD=`< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-12}; echo;`
 echo "! !"
 read -p "Step 1 : Điền User thiết lại ssh Key...:  " USER_SSH
 while [[ $(grep -o "${USER_SSH}" /etc/passwd) ]]
@@ -61,6 +58,8 @@ function get_user_choice() {
 }
 
 function get_user_confirmation() {
+local max_attempts=5
+local attempts=0
     while [ "$attempts" -lt "$max_attempts" ]; do
         show_menu
         get_user_choice
