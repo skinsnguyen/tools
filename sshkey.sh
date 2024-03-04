@@ -38,7 +38,7 @@ chmod 700 /home/${USER_SSH}/.ssh/
 chmod go-w /home/${USER_SSH}/.ssh/
 chmod go-w /home/${USER_SSH}/
 chown -R ${USER_SSH}:${USER_SSH} /home/${USER_SSH}
-chattr +i /home/${USERNAME}/.ssh/authorized_keys
+chattr +i /home/${USER_SSH}/.ssh/authorized_keys
 
 cat /home/${USER_SSH}/.ssh/authorized_keys
     
