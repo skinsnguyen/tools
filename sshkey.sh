@@ -77,7 +77,7 @@ echo "   AuthorizedKeysFile /home/${USER_SSH}/.ssh/authorized_keys" >> "$config_
 #Tắt xác thực bằng passwd và tắt ssh root
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak-$(date +"%Hh-%Mp-%Ss-%F")
 grep -E -i 'ChallengeResponseAuthentication|PasswordAuthentication|UsePAM|PermitRootLogin' /etc/ssh/sshd_config | sed -E 's/^\s*#*\s*([a-zA-Z]+[a-zA-Z0-9]*)\s+.*/\1 no/'
-
+sed -i 's/^#*\s*PubkeyAuthentication\s*\(\(no\|yes\)\)/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 
 # Kiểm tra xem đã thêm thành công hay không
 if [ $? -eq 0 ]; then
