@@ -16,7 +16,17 @@ generate_password() {
     local length=${1:-12}
     < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c"${length}"; echo
 }
+# Kiểm tra User có trong sshd_config
+user_exists_sshd_config() {
+    local allowed_user="$1"
+    local config_file="/etc/ssh/sshd_config"
 
+    if grep -qE "^AllowUsers.*\b$allowed_user\b" "$config_file"; then
+        return 0  # User exists in AllowUsers
+    else
+        return 1  # User does not exist in AllowUsers
+    fi
+}
 # Function to create a new user
 create_new_user() {
     local USER_SSH PASSWORD
