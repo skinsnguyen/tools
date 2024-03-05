@@ -74,6 +74,10 @@ fi
 echo "" >> "$config_file"
 echo "Match Group ${USER_SSH}" >> "$config_file"
 echo "   AuthorizedKeysFile /home/${USER_SSH}/.ssh/authorized_keys" >> "$config_file"
+#Tắt xác thực bằng passwd và tắt ssh root
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak-$(date +"%Hh-%Mp-%Ss-%F")
+grep -E -i 'ChallengeResponseAuthentication|PasswordAuthentication|UsePAM|PermitRootLogin' /etc/ssh/sshd_config | sed -E 's/^\s*#*\s*([a-zA-Z]+[a-zA-Z0-9]*)\s+.*/\1 no/'
+
 
 # Kiểm tra xem đã thêm thành công hay không
 if [ $? -eq 0 ]; then
