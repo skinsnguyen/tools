@@ -12,7 +12,7 @@ allow_url_include=Off"
 
     for i in $(ls "${directory}" | grep 'php*'); do
         php_d_path="${directory}/${i}/lib/php.conf.d"
-        nam_ini_file="${php_d_path}/namnh-security-${timess}.ini"
+        nam_ini_file="${php_d_path}/namnh-security.ini"
 
         echo "Adding configurations to ${nam_ini_file}"
         
