@@ -1,7 +1,7 @@
 #!/bin/bash
 # Nam-Nguyen
 # 02/08/2024
-#Tăng các thống ở configurations all tất php
+#disable functions và allow_url_fopen
 directory="/usr/local"
 timess=$(date +"%Hh-%Mp-%F")
 # Kiểm tra xem thư mục có tồn tại hay không
