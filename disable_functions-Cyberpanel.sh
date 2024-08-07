@@ -1,7 +1,7 @@
 #!/bin/bash
 # Nam-Nguyen
 # 07/08/2024
-# Tăng các thống ở configurations all tất php
+# disable_functions cyberpanel
 
 lsws_path="/usr/local/lsws"
 timess=$(date +"%Hh-%Mp-%F")
