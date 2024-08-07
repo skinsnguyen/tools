@@ -12,7 +12,7 @@ allow_url_include=Off
 "
 for i in $(ls "${lsws_path}" | grep 'lsphp*'); do
         php_d_path="${lsws_path}/${i}/etc/php.d"
-        nam_ini_file="${php_d_path}/namnh-cu.ini"
+        nam_ini_file="${php_d_path}/namnh-security-cyberpanel.ini"
 
         echo "Adding configurations to ${nam_ini_file}"
 
