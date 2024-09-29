@@ -65,7 +65,7 @@ source ~/.bashrc
 
 # Sử dụng acme.sh để tạo chứng chỉ SSL
 echo "Đang tạo chứng chỉ SSL cho $DOMAIN..." | tee -a $LOGFILE
-acme.sh --issue --webroot $WEBROOT $DOMAIN_LIST --force 2>&1 | tee -a $LOGFILE
+.acme.sh/acme.sh --issue --webroot $WEBROOT $DOMAIN_LIST --force 2>&1 | tee -a $LOGFILE
 if [[ $? -ne 0 ]]; then
     echo "Lỗi: Tạo chứng chỉ SSL thất bại." | tee -a $LOGFILE
     exit 1
@@ -73,7 +73,7 @@ fi
 
 # Triển khai chứng chỉ SSL trên cPanel sử dụng deploy hook
 echo "Đang triển khai chứng chỉ SSL..." | tee -a $LOGFILE
-acme.sh --deploy --deploy-hook cpanel_uapi --domain $DOMAIN 2>&1 | tee -a $LOGFILE
+.acme.sh/acme.sh --deploy --deploy-hook cpanel_uapi --domain $DOMAIN 2>&1 | tee -a $LOGFILE
 if [[ $? -ne 0 ]]; then
     echo "Lỗi: Triển khai chứng chỉ SSL thất bại." | tee -a $LOGFILE
     exit 1
