@@ -57,6 +57,8 @@ log "==========================================="
 # log "Tạo thư mục /usr/local/directadmin/custombuild ..."
 mkdir -p /usr/local/directadmin/custombuild 2>&1 | tee -a "$LOG_FILE"
 # log "Tải options.conf từ yourdomain.com ..."
+#php1=7.4 php2=7.3 php3_=8.3 php4_=8.2 php5=8.0 mode=php-fpm
+#webserver nginx_apache
 wget -O /usr/local/directadmin/custombuild/options.conf "https://raw.githubusercontent.com/skinsnguyen/tools/refs/heads/main/options.conf" 2>&1 | tee -a "$LOG_FILE"
 # log "Tạo thư mục /usr/local/directadmin/conf/ ..."
 # mkdir -p /usr/local/directadmin/conf/ 2>&1 | tee -a "$LOG_FILE"
