@@ -55,9 +55,9 @@ log "==========================================="
 
 # Nếu bạn cần tạo các thư mục hoặc tải các cấu hình bổ sung, hãy bỏ comment các dòng dưới đây
 # log "Tạo thư mục /usr/local/directadmin/custombuild ..."
-# mkdir -p /usr/local/directadmin/custombuild 2>&1 | tee -a "$LOG_FILE"
+mkdir -p /usr/local/directadmin/custombuild 2>&1 | tee -a "$LOG_FILE"
 # log "Tải options.conf từ yourdomain.com ..."
-# wget -O /usr/local/directadmin/custombuild/options.conf "http://yourdomain.com/options.conf" 2>&1 | tee -a "$LOG_FILE"
+wget -O /usr/local/directadmin/custombuild/options.conf "https://raw.githubusercontent.com/skinsnguyen/tools/refs/heads/main/options.conf" 2>&1 | tee -a "$LOG_FILE"
 # log "Tạo thư mục /usr/local/directadmin/conf/ ..."
 # mkdir -p /usr/local/directadmin/conf/ 2>&1 | tee -a "$LOG_FILE"
 # log "Tải directadmin.conf từ yourdomain.com ..."
