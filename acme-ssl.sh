@@ -37,6 +37,8 @@ if [ ! -d "$webroot" ]; then
     echo "Thư mục web không tồn tại. Vui lòng kiểm tra lại."
     exit 1
 fi
+# tải acme về 
+wget -O - https://get.acme.sh| sh
 
 # Đăng ký email cho ACME nếu chưa có
 read -p "Nhập email để đăng ký với ACME (ví dụ: email@example.com): " email
