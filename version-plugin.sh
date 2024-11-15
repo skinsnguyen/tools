@@ -128,7 +128,7 @@ ver_bricks=$(echo "$bricks" | grep -oP '\d+(\.\d+)+')
 
 echo "Phiên bản Theme Bricks: $ver_bricks"
 
-##############-Plugin-WPDeveloper-##############
+echo "##############-Plugin-WPDeveloper-##############"
 
 ver_essentialaddons_elementor=$(echo "$essentialaddons_elementor" | grep -oP '\d+(\.\d+)+')
 ver_wpscheduledposts_pro=$(echo "$wpscheduledposts_pro" | grep -oP '\d+(\.\d+)+')
