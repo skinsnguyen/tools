@@ -116,40 +116,67 @@ echo "############################-Theme-DiVi-############################"
 echo "$divi" | grep -oP '\d+(\.\d+)+'
 echo "$divi_builder" | grep -oP '\d+(\.\d+)+'
 
+ver_divi=$(echo "$divi" | grep -oP '\d+(\.\d+)+')
+ver_divi_builder=$(echo "$divi_builder" | grep -oP '\d+(\.\d+)+')
+
+echo "Phiên bản theme Divi: $ver_divi"
+echo "Phiên bản Plugin Divi-Builder: $ver_divi_builder"
+
 echo "================-Theme-Brick-================"
-echo "$bricks" | grep -oP '\d+(\.\d+)+'
+
+ver_bricks=$(echo "$bricks" | grep -oP '\d+(\.\d+)+')
+
+echo "Phiên bản Theme Bricks: $ver_bricks"
 
 ##############-Plugin-WPDeveloper-##############
 
-echo "$essentialaddons_elementor" | grep -oP '\d+(\.\d+)+'
-echo "$wpscheduledposts_pro" | grep -oP '\d+(\.\d+)+'
-echo "$notificationx_pro" | grep -oP '\d+(\.\d+)+'
-echo "$betterdocs_pro" | grep -oP '\d+(\.\d+)+'
-echo "$embedpress_pro" | grep -oP '\d+(\.\d+)+'
-echo "$betterlinks_pro" | grep -oP '\d+(\.\d+)+'
-echo "$essentialblocks_pro" | grep -oP '\d+(\.\d+)+'
-echo "$betterpayment_pro" | grep -oP '\d+(\.\d+)+'
+ver_essentialaddons_elementor=$(echo "$essentialaddons_elementor" | grep -oP '\d+(\.\d+)+')
+ver_wpscheduledposts_pro=$(echo "$wpscheduledposts_pro" | grep -oP '\d+(\.\d+)+')
+ver_notificationx_pro=$(echo "$notificationx_pro" | grep -oP '\d+(\.\d+)+')
+ver_betterdocs_pro=$(echo "$betterdocs_pro" | grep -oP '\d+(\.\d+)+')
+ver_embedpress_pro=$(echo "$embedpress_pro" | grep -oP '\d+(\.\d+)+')
+ver_betterlinks_pro=$(echo "$betterlinks_pro" | grep -oP '\d+(\.\d+)+')
+ver_essentialblocks_pro=$(echo "$essentialblocks_pro" | grep -oP '\d+(\.\d+)+')
+ver_betterpayment_pro=$(echo "$betterpayment_pro" | grep -oP '\d+(\.\d+)+')
 
+echo "Phiên bản Essentialaddons_Elementor: $ver_essentialaddons_elementor"
+echo "Phiên bản Wp-Scheduledposts_pro $ver_wpscheduledposts_pro"
+echo "Phiên bản Notificationx_Pro: $ver_notificationx_pro"
+echo "Phiên bản Betterdocs_Pro: $ver_betterdocs_pro"
+echo "Phiên bản Embedpress_Pro: $ver_embedpress_pro"
+echo "Phiên bản Essentialblocks_Pro: $ver_essentialblocks_pro"
+echo "Phiên bản Betterpayment_Pro: $ver_betterpayment_pro"
 echo "############################-Plugin-Khac-############################"
 
 
-echo "$elementskit" | grep -oP '\d+(\.\d+)+'
-echo "$ithemessecurity_pro" | grep -oP '\d+(\.\d+)+'
-echo "$otgsinstaller_plugin" | grep -oP '\d+(\.\d+)+'
-echo "$seedprodcomingsoon_pro" | grep -oP '\d+(\.\d+)+'
-echo "$seobyrankmath_pro" | grep -oP '\d+(\.\d+)+'
-echo "$sitepressmultilingual_cms" | grep -oP '\d+(\.\d+)+'
-echo "$swift_ai" | grep -oP '\d+(\.\d+)+'
-echo "$wpstaging_pro" | grep -oP '\d+(\.\d+)+'
-echo "$speedycache_pro" | grep -oP '\d+(\.\d+)+'
+ver_elementskit=$(echo "$elementskit" | grep -oP '\d+(\.\d+)+')
+ver_ithemessecurity_pro=$(echo "$ithemessecurity_pro" | grep -oP '\d+(\.\d+)+')
+ver_otgsinstaller_plugin=$(echo "$otgsinstaller_plugin" | grep -oP '\d+(\.\d+)+')
+ver_seedprodcomingsoon_pro=$(echo "$seedprodcomingsoon_pro" | grep -oP '\d+(\.\d+)+')
+ver_seobyrankmath_pro=$(echo "$seobyrankmath_pro" | grep -oP '\d+(\.\d+)+')
+ver_sitepressmultilingual_cms=$(echo "$sitepressmultilingual_cms" | grep -oP '\d+(\.\d+)+')
+ver_swift_ai=$(echo "$swift_ai" | grep -oP '\d+(\.\d+)+')
+ver_wpstaging_pro=$(echo "$wpstaging_pro" | grep -oP '\d+(\.\d+)+')
+ver_speedycache_pro=$(echo "$speedycache_pro" | grep -oP '\d+(\.\d+)+')
+
+echo "Phiên Bản elementskit-Pro: $elementskit"
+echo "Phiên bản Ithemes-security_pro: $ver_ithemessecurity_pro"
+echo "Phiên bản Otgs-Installer_Plugin: $ver_otgsinstaller_plugin"
+echo "Phiên bản Seed-Prodcoming-Soon-pro: $ver_seedprodcomingsoon_pro"
+echo "Phiên bản Seo-ByRankMath-pro: $ver_seobyrankmath_pro"
+echo "Phiên bản Sitepress-Multilingual-cms: $ver_sitepressmultilingual_cms"
+echo "Phiên bản Swift-ai: $ver_swift_ai"
+echo "Phiên bản Wpstaging-Pro: $ver_wpstaging_pro"
 
 
-############################-Dashboard-WPMU-Dev--############################
-echo "$wpmudev_dashboard" | grep -oP '\d+(\.\d+)+'
-echo "$smush_pro"  | grep -oP '\d+(\.\d+)+'
-echo "$defender_pro"  | grep -oP '\d+(\.\d+)+'
+echo "############################-Dashboard-WPMU-Dev--############################"
+ver_wpmudev_dashboard=$(echo "$wpmudev_dashboard" | grep -oP '\d+(\.\d+)+')
+ver_smush_pro=$(echo "$smush_pro" | grep -oP '\d+(\.\d+)+')
+ver_defender_pro=$(echo "$defender_pro" | grep -oP '\d+(\.\d+)+')
 
-
+echo "wpmudev_dashboard: $ver_wpmudev_dashboard"
+echo "smush_pro: $ver_smush_pro"
+echo "defender_pro: $ver_defender_pro"
 
 
 
