@@ -95,15 +95,22 @@ echo "Phiên bản Astra là:  $ver_astra"
 echo "Phiên bản Astra-child là:  $ver_astrachild"
 
 ################-Plugin-Astra-##################
-echo "$astraaddon_plugin" | grep -oP '\d+(\.\d+)+'
-echo "$astrapremium_sites"  | grep -oP '\d+(\.\d+)+'
-echo "$astraportfolio" | grep -oP '\d+(\.\d+)+'
-echo "$bbultimate_addon" | grep -oP '\d+(\.\d+)+'
-echo "$convertpro" | grep -oP '\d+(\.\d+)+'
-echo "$convertpro_addon" | grep -oP '\d+(\.\d+)+'
-echo "$ultimate_elementor" | grep -oP '\d+(\.\d+)+'
-echo "$wpschema_pro" | grep -oP '\d+(\.\d+)+'
+ver_astraaddon_plugin=$(echo "$astraaddon_plugin" | grep -oP '\d+(\.\d+)+')
+ver_astrapremium_sites=$(echo "$astrapremium_sites"  | grep -oP '\d+(\.\d+)+')
+ver_astraportfolio=$(echo "$astraportfolio" | grep -oP '\d+(\.\d+)+')
+ver_bbultimate_addon=$(echo "$bbultimate_addon" | grep -oP '\d+(\.\d+)+')
+ver_convertpro=$(echo "$convertpro" | grep -oP '\d+(\.\d+)+')
+ver_convertpro_addon=$(echo "$convertpro_addon" | grep -oP '\d+(\.\d+)+')
+ver_ultimate_elementor=$(echo "$ultimate_elementor" | grep -oP '\d+(\.\d+)+')
+ver_wpschema_pro=$(echo "$wpschema_pro" | grep -oP '\d+(\.\d+)+')
 
+echo "Phiên bản Astra-addon_plugin là: $ver_astraaddon_plugin"
+echo "Phiên bản Astra-Premiumsites là:$ver_astrapremium_sites"
+echo "Phiên bản Astra-Portfolio là: $ver_astraportfolio"
+echo "Phiên bản Convert-Pro là: $ver_convertpro"
+echo "Phiên bản Convert-Pro-Addon là: $ver_convertpro_addon"
+echo "Phiên bản Ultimate-Elementor là: $ver_ultimate_elementor"
+echo "Phiên bản Wp-Schema_pro là $ver_wpschema_pro"
 echo "############################-Theme-DiVi-############################"
 
 echo "$divi" | grep -oP '\d+(\.\d+)+'
