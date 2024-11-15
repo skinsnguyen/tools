@@ -89,8 +89,10 @@ defender_pro="https://tainguyenwp.azdigi.com/wordpress-plugin-wpmudev/881630_def
 
 echo "################-Theme-Astra-##################"
 
-echo "$astra" | grep -oP '\d+(\.\d+)+'
-echo "$astrachild" | grep -oP '\d+(\.\d+)+'
+ver_astra=$(echo "$astra" | grep -oP '\d+(\.\d+)+')
+ver_astrachild=$(echo "$astrachild" | grep -oP '\d+(\.\d+)+')
+echo "Phiên bản Astra là:  $ver_astra"
+echo "Phiên bản Astra-child là:  $ver_astrachild"
 
 ################-Plugin-Astra-##################
 echo "$astraaddon_plugin" | grep -oP '\d+(\.\d+)+'
