@@ -50,7 +50,7 @@ wpschema_pro="https://tainguyenwp.azdigi.com/WordPress-Astra/Plugin/wp-schema-pr
 divi="https://tainguyenwp.azdigi.com/divi/Divi.zip"
 divi_builder="https://tainguyenwp.azdigi.com/divi/divi-builder.zip"
 
-================-Theme-Brick-================
+############################-Theme-Brick-############################
 bricks="https://tainguyenwp.azdigi.com/wordpress-themes-other/Bricks.1.11.zip"
 
 ##############-Plugin-WPDeveloper-##############
