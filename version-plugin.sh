@@ -159,7 +159,7 @@ ver_swift_ai=$(echo "$swift_ai" | grep -oP '\d+(\.\d+)+')
 ver_wpstaging_pro=$(echo "$wpstaging_pro" | grep -oP '\d+(\.\d+)+')
 ver_speedycache_pro=$(echo "$speedycache_pro" | grep -oP '\d+(\.\d+)+')
 
-echo "Phiên Bản elementskit-Pro: $elementskit"
+echo "Phiên Bản elementskit-Pro: $ver_elementskit"
 echo "Phiên bản Ithemes-security_pro: $ver_ithemessecurity_pro"
 echo "Phiên bản Otgs-Installer_Plugin: $ver_otgsinstaller_plugin"
 echo "Phiên bản Seed-Prodcoming-Soon-pro: $ver_seedprodcomingsoon_pro"
