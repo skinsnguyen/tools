@@ -89,56 +89,56 @@ defender_pro="https://tainguyenwp.azdigi.com/wordpress-plugin-wpmudev/881630_def
 
 echo "################-Theme-Astra-##################"
 
-echo "$astra"
-echo "$astrachild"
+echo "$astra" | grep -oP '\d+(\.\d+)+'
+echo "$astrachild" | grep -oP '\d+(\.\d+)+'
 
 ################-Plugin-Astra-##################
-echo "$astraaddon_plugin"
-echo "$astrapremium_sites" 
-echo "$astraportfolio"
-echo "$bbultimate_addon"
-echo "$convertpro"
-echo "$convertpro_addon"
-echo "$ultimate_elementor"
-echo "$wpschema_pro"
+echo "$astraaddon_plugin" | grep -oP '\d+(\.\d+)+'
+echo "$astrapremium_sites"  | grep -oP '\d+(\.\d+)+'
+echo "$astraportfolio" | grep -oP '\d+(\.\d+)+'
+echo "$bbultimate_addon" | grep -oP '\d+(\.\d+)+'
+echo "$convertpro" | grep -oP '\d+(\.\d+)+'
+echo "$convertpro_addon" | grep -oP '\d+(\.\d+)+'
+echo "$ultimate_elementor" | grep -oP '\d+(\.\d+)+'
+echo "$wpschema_pro" | grep -oP '\d+(\.\d+)+'
 
 echo "############################-Theme-DiVi-############################"
 
-echo "$divi"
-echo "$divi_builder"
+echo "$divi" | grep -oP '\d+(\.\d+)+'
+echo "$divi_builder" | grep -oP '\d+(\.\d+)+'
 
 echo "================-Theme-Brick-================"
-echo "$bricks"
+echo "$bricks" | grep -oP '\d+(\.\d+)+'
 
 ##############-Plugin-WPDeveloper-##############
 
-echo "$essentialaddons_elementor"
-echo "$wpscheduledposts_pro"
-echo "$notificationx_pro"
-echo "$betterdocs_pro"
-echo "$embedpress_pro"
-echo "$betterlinks_pro"
-echo "$essentialblocks_pro"
-echo "$betterpayment_pro"
+echo "$essentialaddons_elementor" | grep -oP '\d+(\.\d+)+'
+echo "$wpscheduledposts_pro" | grep -oP '\d+(\.\d+)+'
+echo "$notificationx_pro" | grep -oP '\d+(\.\d+)+'
+echo "$betterdocs_pro" | grep -oP '\d+(\.\d+)+'
+echo "$embedpress_pro" | grep -oP '\d+(\.\d+)+'
+echo "$betterlinks_pro" | grep -oP '\d+(\.\d+)+'
+echo "$essentialblocks_pro" | grep -oP '\d+(\.\d+)+'
+echo "$betterpayment_pro" | grep -oP '\d+(\.\d+)+'
 
 echo "############################-Plugin-Khac-############################"
 
 
-echo "$elementskit"
-echo "$ithemessecurity_pro"
-echo "$otgsinstaller_plugin"
-echo "$seedprodcomingsoon_pro"
-echo "$seobyrankmath_pro"
-echo "$sitepressmultilingual_cms"
-echo "$swift_ai"
-echo "$wpstaging_pro"
-echo "$speedycache_pro"
+echo "$elementskit" | grep -oP '\d+(\.\d+)+'
+echo "$ithemessecurity_pro" | grep -oP '\d+(\.\d+)+'
+echo "$otgsinstaller_plugin" | grep -oP '\d+(\.\d+)+'
+echo "$seedprodcomingsoon_pro" | grep -oP '\d+(\.\d+)+'
+echo "$seobyrankmath_pro" | grep -oP '\d+(\.\d+)+'
+echo "$sitepressmultilingual_cms" | grep -oP '\d+(\.\d+)+'
+echo "$swift_ai" | grep -oP '\d+(\.\d+)+'
+echo "$wpstaging_pro" | grep -oP '\d+(\.\d+)+'
+echo "$speedycache_pro" | grep -oP '\d+(\.\d+)+'
 
 
 ############################-Dashboard-WPMU-Dev--############################
-echo "$wpmudev_dashboard"
-echo "$smush_pro="
-echo "$defender_pro"
+echo "$wpmudev_dashboard" | grep -oP '\d+(\.\d+)+'
+echo "$smush_pro"  | grep -oP '\d+(\.\d+)+'
+echo "$defender_pro"  | grep -oP '\d+(\.\d+)+'
 
 
 
