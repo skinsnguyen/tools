@@ -1,4 +1,5 @@
 #!/bin/bash
+#https://community.cyberpanel.net/t/how-to-resolve-could-not-login-error-message-wrong-password/44684
 
 #Check if the version of Cyberpanel utilizes path or url
 url=0
