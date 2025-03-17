@@ -42,8 +42,7 @@ if ! mkdir -p /usr/local/directadmin/custombuild 2>> "$LOG_FILE"; then
     log "Không thể tạo thư mục /usr/local/directadmin/custombuild"
     exit 1
 fi
-#php1=7.4 php2=7.3 php3_=8.3 php4_=8.2 php5=8.0 mode=php-fpm
-#webserver nginx_apache
+
 log "Tải options.conf từ GitHub ..."
 if ! wget -O /usr/local/directadmin/custombuild/options.conf \
     "https://raw.githubusercontent.com/skinsnguyen/tools/refs/heads/main/options.conf" 2>> "$LOG_FILE"; then
@@ -79,7 +78,7 @@ check_license_key() {
         return 1
     fi
     # Kiểm tra cú pháp Base64: chỉ chứa A-Z, a-z, 0-9, +, / và = ở cuối
-    # Độ dài tối thiểu 43 ký tự (dựa trên ví dụ)
+    # Độ dài tối thiểu 43 ký tự
     if [[ "$key" =~ ^[A-Za-z0-9+/]+={0,2}$ ]] && [ ${#key} -ge 43 ]; then
         return 0
     else
@@ -87,19 +86,17 @@ check_license_key() {
     fi
 }
 
-# Nhập và kiểm tra LICENSE_KEY
+# Nhập và kiểm tra LICENSE_KEY (không dùng vòng lặp)
 log "Yêu cầu nhập LICENSE_KEY"
-while true; do
-    read -s -p "Vui lòng nhập LICENSE_KEY của bạn: " LICENSE_KEY
-    echo
-    if check_license_key "$LICENSE_KEY"; then
-        log "LICENSE_KEY hợp lệ"
-        break
-    else
-        echo "LICENSE_KEY không hợp lệ. Vui lòng nhập lại."
-        echo "Key phải là chuỗi Base64 hợp lệ (ví dụ: eZtc0j+N3CMYaQVvnE5GNQN8O2pxL2tPFQPxVqB6suI=)"
-    fi
-done
+echo "Nhập LICENSE_KEY của bạn dưới dạng Base64 (ví dụ: eZtc0j+N3CMYaQVvnE5GNQN8O2pxL2tPFQPxVqB6suI=)"
+read -p "LICENSE_KEY: " LICENSE_KEY
+echo
+if ! check_license_key "$LICENSE_KEY"; then
+    log "LICENSE_KEY không hợp lệ"
+    echo "LICENSE_KEY không hợp lệ. Key phải là chuỗi Base64 hợp lệ (ví dụ: eZtc0j+N3CMYaQVvnE5GNQN8O2pxL2tPFQPxVqB6suI=)"
+    exit 1
+fi
+log "LICENSE_KEY hợp lệ"
 
 # Thực thi script cài đặt
 log "Bắt đầu thực thi script cài đặt DirectAdmin với LICENSE_KEY"
