@@ -5,10 +5,10 @@ echo "  Xóa danh sách tệp và cập nhật WordPress mới nhất"
 echo "======================================="
 
 # Kiểm tra quyền root
-if [[ $EUID -eq 0 ]]; then
-    echo "❌ Script không nên chạy với quyền root để tránh rủi ro. Vui lòng chạy với user thường."
-    exit 1
-fi
+#if [[ $EUID -eq 0 ]]; then
+#    echo "❌ Script không nên chạy với quyền root để tránh rủi ro. Vui lòng chạy với user thường."
+#    exit 1
+#fi
 
 # Danh sách các tệp/thư mục cần xóa trước khi cập nhật
 files_to_remove=(
