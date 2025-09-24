@@ -69,7 +69,7 @@ tar -xvzf asterisk-${ASTERISK_VERSION}.tar.gz
 rm -f asterisk-${ASTERISK_VERSION}.tar.gz
 #ASTERISK_DIR=$(tar -tf /usr/src/asterisk-${ASTERISK_VERSION}.tar.gz | head -1 | cut -f1 -d"/")
 #cd $ASTERISK_DIR
-cd asterisk-${ASTERISK_VERSION}
+cd asterisk-20*
 
 # Cài đặt các gói phụ thuộc và cấu hình
 echo "6. Cài đặt các gói phụ thuộc của Asterisk và cấu hình..."
