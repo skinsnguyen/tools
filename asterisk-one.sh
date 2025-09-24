@@ -8,7 +8,7 @@
 # KHAI BÁO BIẾN (Có thể điều chỉnh)
 # ----------------------------------------------------
 ASTERISK_VERSION="20-current.tar.gz" # Hoặc "20-current" nếu muốn bản mới hơn 20 LTS
-FREEPBX_VERSION="16.0-latest"
+FREEPBX_VERSION="16.0-latest.tgz"
 PHP_VERSION="7.4" # PHP 7.4 là phiên bản ổn định cho Ubuntu 20.04
 DB_PASS="namhiou213HT" # THAY THẾ bằng mật khẩu phức tạp
 
