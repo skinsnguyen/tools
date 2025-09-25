@@ -34,7 +34,9 @@ php$PHP_VERSION-zip php$PHP_VERSION-bcmath php$PHP_VERSION-common php$PHP_VERSIO
 sed -i 's/memory_limit = 128M/memory_limit = 512M/' /etc/php/$PHP_VERSION/apache2/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/' /etc/php/$PHP_VERSION/apache2/php.ini
 sed -i 's/post_max_size = 8M/post_max_size = 20M/' /etc/php/$PHP_VERSION/apache2/php.ini
+systemctl enable apache2
 systemctl restart apache2
+systemctl status apache2
 
 # --- BƯỚC THỦ CÔNG: CẤU HÌNH MARIADB ---
 echo -e "\n==================================================================="
@@ -45,6 +47,9 @@ echo "    - Nhấn Y cho các câu hỏi còn lại."
 echo "Sau khi hoàn tất, nhấn Enter để tiếp tục script."
 echo "==================================================================="
 read -p "Nhấn ENTER để tiếp tục script sau khi đã chạy mysql_secure_installation..."
+systemctl enable mysql
+systemctl restart mysql
+systemctl status mysql
 
 # Tạo Database và User
 echo "3. Tạo Database và User cho Asterisk/FreePBX..."
@@ -107,6 +112,21 @@ wget -O extra_sounds.tar.gz http://downloads.asterisk.org/pub/telephony/sounds/a
 tar xzf core_sounds.tar.gz && rm -f core_sounds.tar.gz
 tar xzf extra_sounds.tar.gz && rm -f extra_sounds.tar.gz
 
+###################################################
+#cài đặt node js
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Kích hoạt NVM trong phiên hiện tại
+source ~/.bashrc
+# Cài đặt phiên bản Node.js LTS mới nhất (ví dụ: v20)
+nvm install lts/gallium  # Gallium là Node 16 (Yêu cầu tối thiểu)
+# Hoặc, cài đặt phiên bản LTS mới nhất:
+nvm install lts/hydrogen # Hydrogen là Node 18 (Được khuyến nghị)
+# Đặt phiên bản vừa cài đặt làm mặc định
+nvm alias default lts/hydrogen
+# Kiểm tra phiên bản để xác nhận đã cài đặt thành công
+node -v
+apt-get install nodejs npm -y
+fwconsole ma install pm2
 # --- PHẦN 3: CÀI ĐẶT FREEPBX ---
 echo "10. Cài đặt FreePBX..."
 cd /usr/src
@@ -121,7 +141,7 @@ cd freepbx
 
 # Tạo service file cho FreePBX
 echo "11. Cấu hình dịch vụ systemd cho FreePBX..."
-cat << EOF > /etc/systemd/system/freepbx.service
+cat << 'EOF' > /etc/systemd/system/freepbx.service
 [Unit]
 Description=FreePBX VoIP Server
 After=mariadb.service
