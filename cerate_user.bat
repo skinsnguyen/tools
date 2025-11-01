@@ -1,5 +1,5 @@
 #!/bin/bash
-# Nam-Nguyen
+# Author Nam-Nguyen
 # 01-11-2025
 @echo off
 REM ========================================
