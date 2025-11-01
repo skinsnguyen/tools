@@ -1,3 +1,6 @@
+#!/bin/bash
+# Nam-Nguyen
+# 01-11-2025
 @echo off
 REM ========================================
 REM    BATCH FILE TAO USER TU DONG
