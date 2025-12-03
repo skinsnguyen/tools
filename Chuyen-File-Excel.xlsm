@@ -1,5 +1,8 @@
-'Author: Nam-Nguyen
-'Date: 03-12-2025
+' Author: Nam-Nguyen
+' Date: 03-12-2025
+' Huong dan:
+' Nhấn tổ hợp phím Alt + F11 (để mở cửa sổ Microsoft Visual Basic).
+' Trên thanh menu, chọn Insert > Module.
 
 Sub ChuyenDoiSangThuMucRieng()
     Dim strSourcePath As String
