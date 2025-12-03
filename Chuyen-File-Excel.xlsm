@@ -1,4 +1,5 @@
-
+'Author: Nam-Nguyen
+'Date: 03-12-2025
 
 Sub ChuyenDoiSangThuMucRieng()
     Dim strSourcePath As String
