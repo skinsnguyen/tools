@@ -1,0 +1,54 @@
+
+
+Sub ChuyenDoiSangThuMucRieng()
+    Dim strSourcePath As String
+    Dim strDestPath As String
+    Dim strFile As String
+    Dim wbk As Workbook
+    
+    ' --- BU?C 1: Ch?n thu m?c ch?a file CU (.xls) ---
+    With Application.FileDialog(msoFileDialogFolderPicker)
+        .Title = "BUOC 1: Chon thu muc chua file CU (.xls)"
+        .Show
+        If .SelectedItems.Count = 0 Then Exit Sub
+        strSourcePath = .SelectedItems(1) & "\"
+    End With
+    
+    ' --- BU?C 2: Ch?n thu m?c luu file M?I (.xlsx) ---
+    With Application.FileDialog(msoFileDialogFolderPicker)
+        .Title = "BUOC 2: Chon thu muc de luu file MOI (.xlsx)"
+        .Show
+        If .SelectedItems.Count = 0 Then Exit Sub
+        strDestPath = .SelectedItems(1) & "\"
+    End With
+
+    ' T?t màn hình ch?p nháy và các c?nh báo Compatibility
+    Application.ScreenUpdating = False
+    Application.DisplayAlerts = False
+
+    strFile = Dir(strSourcePath & "*.xls")
+
+    ' B?t d?u vòng l?p
+    Do While strFile <> ""
+        ' Ki?m tra d?m b?o ch? l?y file .xls (tránh l?y nh?m file khác)
+        If Right(strFile, 4) = ".xls" Then
+            
+            ' M? file t? thu m?c Ngu?n
+            Set wbk = Workbooks.Open(Filename:=strSourcePath & strFile)
+            
+            ' Luu file sang thu m?c Ðích v?i d?nh d?ng m?i
+            ' Tên file m?i s? là Tên_Cu + "x" (ví d?: data.xls -> data.xlsx)
+            wbk.SaveAs Filename:=strDestPath & strFile & "x", FileFormat:=xlOpenXMLWorkbook
+            
+            ' Ðóng file l?i
+            wbk.Close SaveChanges:=False
+        End If
+        strFile = Dir
+    Loop
+
+    ' B?t l?i các tính nang h? th?ng
+    Application.ScreenUpdating = True
+    Application.DisplayAlerts = True
+
+    MsgBox "Xong! File moi da duoc luu tai: " & vbCrLf & strDestPath, vbInformation
+End Sub
