@@ -10,7 +10,7 @@ Sub ChuyenDoiSangThuMucRieng()
     Dim strFile As String
     Dim wbk As Workbook
     
-    ' --- BU?C 1: Ch?n thu m?c ch?a file CU (.xls) ---
+    ' --- BUOC 1: Chon Thu Muc Noi Luu Cu (.xls) ---
     With Application.FileDialog(msoFileDialogFolderPicker)
         .Title = "BUOC 1: Chon thu muc chua file CU (.xls)"
         .Show
@@ -18,7 +18,7 @@ Sub ChuyenDoiSangThuMucRieng()
         strSourcePath = .SelectedItems(1) & "\"
     End With
     
-    ' --- BU?C 2: Ch?n thu m?c luu file M?I (.xlsx) ---
+    ' --- BUOC 2: Chon Thu Muc Noi Luu Moi (.xlsx) ---
     With Application.FileDialog(msoFileDialogFolderPicker)
         .Title = "BUOC 2: Chon thu muc de luu file MOI (.xlsx)"
         .Show
@@ -26,18 +26,18 @@ Sub ChuyenDoiSangThuMucRieng()
         strDestPath = .SelectedItems(1) & "\"
     End With
 
-    ' T?t màn hình ch?p nháy và các c?nh báo Compatibility
+    ' Tat man hình ch?p nháy và các c?nh báo Compatibility
     Application.ScreenUpdating = False
     Application.DisplayAlerts = False
 
     strFile = Dir(strSourcePath & "*.xls")
 
-    ' B?t d?u vòng l?p
+    ' Bat dau xu ly
     Do While strFile <> ""
-        ' Ki?m tra d?m b?o ch? l?y file .xls (tránh l?y nh?m file khác)
+        ' Kiem tra xu ly cac file 
         If Right(strFile, 4) = ".xls" Then
             
-            ' M? file t? thu m?c Ngu?n
+            ' Mo file thu muc nguon
             Set wbk = Workbooks.Open(Filename:=strSourcePath & strFile)
             
             ' Luu file sang thu m?c Ðích v?i d?nh d?ng m?i
